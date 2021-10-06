@@ -29,6 +29,7 @@ export default function Main() {
 
     // FUNCIÓN QUE ALTERA EL ESTADO LOCAL "POST"
     // VA A REEMPLAZAR COMPLETAMENTE EL ESTADO LOCAL
+    //event.target.name tiene que ser igual el TAG y a la propiedad de su elemento definido en useState
     setPost({
       ...post,
       id: nanoid(),
@@ -39,6 +40,7 @@ export default function Main() {
   const savePost = (event) => {
     event.preventDefault()
 
+    //El orden siguiente define ultimo o final de objetos guardados
     setList([
       post,
       ...list
@@ -67,6 +69,8 @@ export default function Main() {
     setList(arrayFiltrado)
 
   }
+
+  //EN EL INPUT el valor de name tiene que ser igual a la propiedad del objeto con el que se esta trabajando.
 
   return (
     <>
