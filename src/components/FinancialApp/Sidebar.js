@@ -2,16 +2,16 @@
 
 // useEffect
 // Es un hook que me permite realizar efectos secundarios en el código ("side effects"). Los "side effects" usuales son peticiones de API.
-// O necesitan re-renderizar la vista nuevamente, en caso de que haya habido algún cambio en una variable externa, como en useState.
+// NO necesitan re-renderizar la vista nuevamente, en caso de que haya habido algún cambio en una variable externa, como en useState.
 import React, { useState, useEffect } from 'react'
 
-import PacmanLoader from "react-spinners/PacmanLoader";
+import PacmanLoader from "react-spinners/PacmanLoader";//Se instaló el paquete/se elige el nombre del spinner
 
-import axios from "axios"
+import axios from "axios"//Para el USO de get
 
 import {
   Link
-} from 'react-router-dom'
+} from 'react-router-dom' //Paquete para manejo de Links internos dentro de REACT
 
 export default function Sidebar() {
 
@@ -19,7 +19,7 @@ export default function Sidebar() {
 
 
   // SINTAXIS DE USEEFFECT
-  // 1er. argumento - Es un callback - una función que se ejecuta a partir del monitorio del segundo argumento.
+  // 1er. argumento - Es un callback - una función que se ejecuta a partir del monitoreo del segundo argumento.
 
   // 2do. argumento - | <empty> | [] | [user]
   // El arreglo solo "[]" significa ejecútate una vez.
