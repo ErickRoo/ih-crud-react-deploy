@@ -1,13 +1,18 @@
+// ./components/FinancialApp/index.js
+
 import React from 'react'
 import Sidebar from './Sidebar'
 
-function FinancialApp() {
+
+export default function FinancialApp(props) {
   return (
     <div className="flex">
+
       <Sidebar />
-      App de finanzas.
+
+      {/* Contenido de las rutas */}
+      {props.children}
+
     </div>
   )
 }
-
-export default FinancialApp

@@ -15,6 +15,8 @@ import CRUD from './components/CRUD';
 import FinancialApp from './components/FinancialApp';
 import Details from './components/FinancialApp/Details'
 
+import Welcome from './components/FinancialApp/Welcome'
+
 
 function App() {
   return (
@@ -26,8 +28,24 @@ function App() {
 
         {/* TODO EL CONTENIDO DINÁMICO POR RUTA */}
         <Switch>
-          <Route exact path="/financial-app/:currency" component={Details} />
-          <Route exact path="/financial-app" component={FinancialApp} />
+
+
+          {/* NESTED ROUTES - PROFUNDIDAD EN RUTAS */}
+          <Route path="/financial-app" render={(props) => {
+
+            return (
+              <>
+
+                <FinancialApp>
+
+                  <Route exact path={`${props.match.url}/:currency`} component={Details} />
+                  <Route exact path={`${props.match.url}/`} component={Welcome} />
+
+                </FinancialApp>
+
+              </>
+            )
+          }} />
           <Route exact path="/crud-me" component={CRUD} />
           <Route exact path="/mike" component={Main} />
           <Route exact path="/" component={Home} />
